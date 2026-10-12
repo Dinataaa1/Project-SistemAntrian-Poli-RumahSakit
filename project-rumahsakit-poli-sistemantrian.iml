@@ -7,5 +7,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="JavaFX-21">
+        <CLASSES>
+          <root url="file://C:/javafx-sdk-21.0.12/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://C:/javafx-sdk-21.0.12/lib" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1050.0" style="-fx-background-color: #f4f6f9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TampilanController">
+   <top>
+      <VBox alignment="CENTER" spacing="3.0" style="-fx-background-color: #008080; -fx-padding: 14px 20px;" BorderPane.alignment="CENTER">
+         <children>
+            <Label style="-fx-font-weight: bold;" text="SISTEM INFORMASI &amp; ANTREAN POLIKLINIK" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="RS Sehat Sentosa — Layanan Terpadu Rawat Jalan" textFill="#d1f2eb">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox spacing="14.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="14.0" left="16.0" right="16.0" top="12.0" />
+         </padding>
+         <children>
+            <HBox spacing="16.0">
+               <children>
+                  <!-- Panel Kiri: Form Pendaftaran Pasien Baru -->
+                  <VBox prefWidth="500.0" spacing="9.0" style="-fx-background-color: white; -fx-border-color: #dcdde1; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-padding: 14px;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox spacing="2.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold; -fx-text-fill: #008080; -fx-font-size: 14px;" text="PENDAFTARAN PASIEN BARU" />
+                              <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 11px;" text="Lengkapi identitas pasien dan pilih poliklinik tujuan" />
+                           </children>
+                        </VBox>
+                        
+                        <VBox spacing="3.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #2c3e50;" text="Nomor Induk Kependudukan (NIK)" />
+                              <TextField fx:id="txtNik" promptText="Masukkan 16 digit NIK..." style="-fx-background-color: #f9f9f9; -fx-border-color: #bdc3c7; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-padding: 6px 10px;" />
+                           </children>
+                        </VBox>
+                        
+                        <VBox spacing="3.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #2c3e50;" text="Nama Lengkap Pasien" />
+                              <TextField fx:id="txtNamaPasien" promptText="Masukkan nama lengkap pasien..." style="-fx-background-color: #f9f9f9; -fx-border-color: #bdc3c7; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-padding: 6px 10px;" />
+                           </children>
+                        </VBox>
+                        
+                        <HBox spacing="10.0">
+                           <children>
+                              <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #2c3e50;" text="Jenis Kelamin" />
+                                    <ComboBox fx:id="comboJenisKelamin" maxWidth="1.7976931348623157E308" promptText="-- Pilih Jenis Kelamin --" style="-fx-background-color: #f9f9f9; -fx-border-color: #bdc3c7; -fx-border-radius: 4px; -fx-background-radius: 4px;" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #2c3e50;" text="Pilihan Poli Tujuan" />
+                                    <ComboBox fx:id="comboPoliDaftar" maxWidth="1.7976931348623157E308" promptText="-- Pilih Poli --" style="-fx-background-color: #f9f9f9; -fx-border-color: #bdc3c7; -fx-border-radius: 4px; -fx-background-radius: 4px;" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        
+                        <VBox spacing="3.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #2c3e50;" text="Keluhan Pasien" />
+                              <TextField fx:id="txtKeluhan" promptText="Keluhan singkat (contoh: Demam, Sakit Gigi, Batuk)..." style="-fx-background-color: #f9f9f9; -fx-border-color: #bdc3c7; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-padding: 6px 10px;" />
+                           </children>
+                        </VBox>
+                        
+                        <Button fx:id="btnTambahAntrian" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleTambahAntrian" style="-fx-background-color: #008080; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 9px; -fx-background-radius: 5px; -fx-cursor: hand;" text="+ TAMBAH KE ANTRIAN">
+                           <VBox.margin>
+                              <Insets top="4.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  
+                  <!-- Panel Kanan: Kontrol dan Pemanggilan Poli -->
+                  <VBox prefWidth="500.0" spacing="10.0" style="-fx-background-color: white; -fx-border-color: #dcdde1; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-padding: 14px;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox spacing="2.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold; -fx-text-fill: #2980b9; -fx-font-size: 14px;" text="KONTROL &amp; PEMANGGILAN ANTREAN" />
+                              <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 11px;" text="Pilih poli aktif untuk memanggil dan melayani pasien" />
+                           </children>
+                        </VBox>
+                        
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #2c3e50;" text="Poli Aktif:" />
+                              <ComboBox fx:id="comboPoliAktif" maxWidth="1.7976931348623157E308" promptText="-- Pilih Poli Aktif --" style="-fx-background-color: #f9f9f9; -fx-border-color: #bdc3c7; -fx-border-radius: 4px; -fx-background-radius: 4px;" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        
+                        <VBox spacing="3.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #2c3e50;" text="Dokter Penanggung Jawab:" />
+                              <Label fx:id="lblDokterInfo" style="-fx-text-fill: #1a5276; -fx-font-weight: bold; -fx-background-color: #e8f4f8; -fx-padding: 7px 10px; -fx-background-radius: 5px; -fx-border-color: #bce1ee; -fx-border-radius: 5px;" text="Dokter Penanggung Jawab" />
+                           </children>
+                        </VBox>
+                        
+                        <!-- Kartu Display Nomor Antrean -->
+                        <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: #2980b9; -fx-background-radius: 8px; -fx-padding: 16px;">
+                           <children>
+                              <Label style="-fx-font-weight: bold; -fx-font-size: 13px;" text="NOMOR ANTREAN SAAT INI:" textFill="#ebf5fb" />
+                              <Label fx:id="lblNomorAntrian" alignment="CENTER" maxWidth="1.7976931348623157E308" text="-" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="44.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPasienAktif" alignment="CENTER" maxWidth="1.7976931348623157E308" style="-fx-font-weight: bold; -fx-font-size: 12px;" text="Belum ada antrean yang dipanggil" textFill="#d4e6f1" />
+                           </children>
+                        </VBox>
+                        
+                        <!-- Tombol Panggil & Proses -->
+                        <HBox spacing="10.0">
+                           <children>
+                              <Button fx:id="btnPanggil" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlePanggilAntrian" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 9px; -fx-background-radius: 5px; -fx-cursor: hand;" text="PANGGIL ANTRIAN NEXT" HBox.hgrow="ALWAYS" />
+                              <Button fx:id="btnProses" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleProsesPemeriksaan" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 9px; -fx-background-radius: 5px; -fx-cursor: hand;" text="PROSES PEMERIKSAAN" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="2.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <!-- Panel Bawah: Tabel Antrean Keseluruhan -->
+            <VBox spacing="8.0" style="-fx-background-color: white; -fx-border-color: #dcdde1; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-padding: 12px 14px;" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label style="-fx-font-weight: bold; -fx-font-size: 13px; -fx-text-fill: #2c3e50;" text="DAFTAR ANTREAN HARI INI (KESELURUHAN)" />
+                  <TableView fx:id="tableAntrian" prefHeight="240.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="colNo" maxWidth="95.0" minWidth="80.0" prefWidth="90.0" text="No. Antrean" />
+                      <TableColumn fx:id="colNik" minWidth="130.0" prefWidth="140.0" text="NIK" />
+                      <TableColumn fx:id="colNama" minWidth="130.0" prefWidth="160.0" text="Nama Pasien" />
+                      <TableColumn fx:id="colJenisKelamin" maxWidth="100.0" minWidth="80.0" prefWidth="90.0" text="Jenis Kelamin" />
+                      <TableColumn fx:id="colPoli" minWidth="100.0" prefWidth="110.0" text="Poli Tujuan" />
+                      <TableColumn fx:id="colKeluhan" minWidth="140.0" prefWidth="190.0" text="Keluhan" />
+                      <TableColumn fx:id="colStatus" maxWidth="140.0" minWidth="110.0" prefWidth="120.0" text="Status" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

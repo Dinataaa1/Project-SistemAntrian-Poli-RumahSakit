@@ -5,10 +5,11 @@ import poli.PoliAnak;
 import poli.PoliGigi;
 import poli.PoliUmum;
 import rumahsakit.RumahSakit;
+import view.App;
 
 /**
- * Program utama: membuat dokter, pasien, dan poli, mendaftarkan pasien,
- * lalu memproses antrean secara polimorfik.
+ * Program utama: Titik masuk aplikasi Sistem Antrian Poliklinik Rumah Sakit.
+ * Meluncurkan antarmuka grafis (JavaFX UI) yang terintegrasi dengan logika rumah sakit.
  *
  * @author Ragil Rohmat Dinata, Irtadho Zainul Falah, Prinsa Daffa Nanda A
  * @version 1.0
@@ -19,10 +20,24 @@ public class Main {
 
     /**
      * Titik masuk program.
+     * Meluncurkan UI JavaFX secara default (atau mode CLI jika argumen "--cli" diberikan).
      *
-     * @param args tidak digunakan
+     * @param args argumen baris perintah
      */
     public static void main(String[] args) {
+        if (args != null && args.length > 0 && args[0].equalsIgnoreCase("--cli")) {
+            runCliDemo();
+            return;
+        }
+
+        // Luncurkan antarmuka JavaFX
+        App.main(args);
+    }
+
+    /**
+     * Menjalankan demonstrasi berbasis teks konsol (CLI) asli.
+     */
+    public static void runCliDemo() {
         RumahSakit rs = RumahSakit.getInstance();
 
         // Dokter dan Pasien dibuat terpisah (berdiri sendiri)
